@@ -1,3 +1,6 @@
 [submodule "bin/3rd-party-bin/Nvidinux"]
 	path = bin/3rd-party-bin/Nvidinux
 	url = https://github.com/schooldanlp6/Nvidinux
+[submodule "web/hexagonTab_4.2.0/src"]
+	path = web/hexagonTab_4.2.0/src
+	url = git@github.com:zombieFox/hexagonTab.git
