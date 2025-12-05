@@ -1,0 +1,3 @@
+[submodule "bin/3rd-party-bin/Nvidinux"]
+	path = bin/3rd-party-bin/Nvidinux
+	url = https://github.com/schooldanlp6/Nvidinux
