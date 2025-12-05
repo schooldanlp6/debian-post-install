@@ -1,0 +1,30 @@
+parse_git_branch() {
+    git branch --show-current 2>/dev/null
+}
+
+get_date() {
+    date +"%A: %d.%m.%Y"
+}
+
+format_uptime() {
+    local up=$(cut -d. -f1 /proc/uptime)
+
+    local days=$(( up/86400 ))
+    local hours=$(( (up%86400)/3600 ))
+    local mins=$(( (up%3600)/60 ))
+    local secs=$(( up%60 ))
+
+    if (( days > 0 )); then
+        printf "%dd %02d:%02d:%02d" "$days" "$hours" "$mins" "$secs"
+    else
+        printf "%02d:%02d:%02d" "$hours" "$mins" "$secs"
+    fi
+}
+
+while true; dorintf "\033]0;%s\007" "change here: danlp6@danlp6-fw $: - $(date +%H:%M:%S)"
+    sleep 1
+done &
+
+
+export PS1="\[\e[32m\]\[\e[1m\]\u@\h\[\e[37m\]: "'\[\e[1;36m\]$(format_uptime)\[\e[0m\]'"\[\e[1m\] - \[\e[33m\]\$(get_date)\[\e[0m\] \[\e[32m\]\w\[\e[33m\] \$(parse_git_branch)\[\e[0m\] \[\e[0m\]\n-> $: "
+clear

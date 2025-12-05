@@ -1,0 +1,10 @@
+PRETTY_NAME="Splendian 16"
+NAME="Debian GNU/Linux"
+VERSION_ID="16"
+VERSION="16 (splendian)"
+VERSION_CODENAME=splendian
+DEBIAN_VERSION_FULL=16.0
+ID=splendian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"

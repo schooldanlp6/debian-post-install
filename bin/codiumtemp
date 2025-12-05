@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+BASE_DIR=~/Repos/tempsession
+mkdir -p ~/Repos/tempsession
+
+# find next incremental dir
+i=1
+while [ -d "${BASE_DIR}/session-${i}" ]; do
+    i=$((i+1))
+done
+
+SESSION_DIR="${BASE_DIR}/session-${i}"
+mkdir -p "$SESSION_DIR"
+
+echo "Created session directory: $SESSION_DIR"
+
+# open VSCodium
+codium "$SESSION_DIR" &
+CODIUM_PID=$!
+
+echo "Started VSCodium (launcher PID: $CODIUM_PID)"
+echo "Close the editor whenever you're done."
+
+# wait for the launcher to exit (instant, but you said don't care)
+wait "$CODIUM_PID" 2>/dev/null
+
+# Now wait for user to confirm
+echo
+echo "Press Enter to delete the session, or type 'keep' to keep it:"
+read USER_INPUT
+
+if [[ "$USER_INPUT" == "keep" ]]; then
+    echo "Keeping directory: $SESSION_DIR"
+else
+    echo "Deleting directory: $SESSION_DIR"
+    rm -rf "$SESSION_DIR"
+fi

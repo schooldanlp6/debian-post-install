@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Do not execute as sudo
+USERHOME=/home/$(whoami)
+
+sudo bash -c 'echo "cd /opt/helium-browser; ./chrome" > /usr/bin/helium'
+
+# Create folder if not existent
+sudo mkdir -p /opt/helium-browser
+
+# Backup Helium
+sudo mv /opt/helium-browser /opt/helium-browser.old
+
+# Install from homedir
+sudo -E cp -r  $USERHOME/AppImages/helium-browser /opt/helium-browser

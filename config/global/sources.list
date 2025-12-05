@@ -1,0 +1,14 @@
+#deb cdrom:[Debian GNU/Linux 13.0.0 _Trixie_ - Official amd64 DVD Binary-1 with firmware 20250809-11:21]/ trixie contrib main non-free-firmware
+
+# Here is place for selfhosted trixie
+
+#deb http://192.168.178.183:8000/debian trixie main
+deb http://0.0.0.0:8000/debian trixie main
+#deb [trusted=yes] http://0.0.0.0:8000/ danlp6 universe multiverse non-free
+
+# This system was installed using removable media other than
+# CD/DVD/BD (e.g. USB stick, SD card, ISO image file).
+# The matching "deb cdrom" entries were disabled at the end
+# of the installation process.
+# For information about how to configure apt package sources,
+# see the sources.list(5) manual.

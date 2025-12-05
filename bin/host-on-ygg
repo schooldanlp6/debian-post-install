@@ -1,0 +1,4 @@
+#! /bin/env bash
+#ufw allow 
+
+python3 -m http.server 8080 --bind 201:780d:50a4:60ab:11d:b5db:2d5e:6dd --dir .
