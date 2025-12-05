@@ -4,3 +4,6 @@
 [submodule "web/hexagonTab_4.2.0/src"]
 	path = web/hexagonTab_4.2.0/src
 	url = git@github.com:zombieFox/hexagonTab.git
+[submodule "bin/3rd-party-bin/aospac"]
+	path = bin/3rd-party-bin/aospac
+	url = git@github.com:schooldanlp6/AOS-package-CLI-GUI.git
